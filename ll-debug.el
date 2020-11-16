@@ -285,7 +285,7 @@
 ;;; Code:
 
 (require 'skeleton)
-(require 'cl)
+(require 'cl-lib)
 
 ;; Struct------------------------------------------------------------------
 (defstruct ll-debug-struct
@@ -398,7 +398,7 @@ invoked recursively on the returned value."
     (goto-char end)
     (comment-region start end)
     (save-excursion
-      (insert-string src-code))))
+      (insert src-code))))
 
 (defun ll-debug-comment-region-or-line ()
   "Comment out the current line or all lines of the region."
