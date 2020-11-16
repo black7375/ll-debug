@@ -287,7 +287,7 @@
 (require 'cl-lib)
 
 ;; Struct------------------------------------------------------------------
-(defstruct ll-debug-struct
+(cl-defstruct ll-debug-struct
   "Strings/functions/skeletons to create debug messages for a single mode.
 See `ll-debug-statement-alist' and `ll-debug-expand', too."
   (prefix "")
