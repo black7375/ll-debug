@@ -83,7 +83,7 @@
 ;; Get the newest version of ll-debug.el via
 ;;
 ;; http://www.cbrunzema.de/software.html#ll-debug
-;; 
+;;
 ;; and put it in your load-path. Add the following form to your init
 ;; file (~/.emacs or ~/.xemacs/init.el):
 ;;
@@ -255,7 +255,7 @@
 ;;           (re-search-forward comment-start-skip ...).
 ;;         * use ll-debug-region-or-line-comment-start instead of
 ;;           the optional ignore-current-column argument for
-;;           ll-debug-region-or-line-start. 
+;;           ll-debug-region-or-line-start.
 ;;         * ll-debug-copy-and-comment-region-or-line works correctly
 ;;           now if point is in the middle of the line.
 ;;         * Version 0.2.1
@@ -314,7 +314,7 @@ See `ll-debug-statement-alist' and `ll-debug-expand', too."
       (uncomment-region beg end)              ;GNUEmacs
     (comment-region beg end -1)))             ;XEmacs
 
-                      
+
 ;;; misc. Functions -------------------------------------------------------
 (defun ll-debug-region-or-line-start ()
   (save-excursion
@@ -349,7 +349,7 @@ C-v C-d   ll-debug-insert"
   (interactive)
   (unless (keymapp (global-key-binding '[(control v)]))
     (global-unset-key '[(control v)]))
-  
+
   (define-key global-map '[(control v) (control v)]
     #'ll-debug-toggle-comment-region-or-line)
   (define-key global-map '[(control v) v]
@@ -423,7 +423,7 @@ invoked recursively on the returned value."
     (ll-debug-comment-region-or-line)))
 
 
-;; debug output statements ------------------------------------------------ 
+;; debug output statements ------------------------------------------------
 (defun ll-debug-before-text-p ()
   "Return t iff point is at bol or in leading whitespace."
   (save-excursion
@@ -543,7 +543,7 @@ Uses `query-replace-regexp' internally."
 (ll-debug-register-mode 'lisp-mode
                         "(CL:format t " ")"
                         '(nil "\"" (ll-debug-create-next-debug-string) "~%\"")
-                        '(nil "\"" (ll-debug-create-next-debug-string) 
+                        '(nil "\"" (ll-debug-create-next-debug-string)
                               ("Variable name: "
                                "  " str ":~S"
                                '(progn (setq v1 (concat v1 " " str)) nil)
@@ -563,7 +563,7 @@ Uses `query-replace-regexp' internally."
 (ll-debug-register-mode '(perl-mode cperl-mode)
                         "print " ";"
                         '(nil "\"" (ll-debug-create-next-debug-string) "\\n\"")
-                        '(nil "\"" (ll-debug-create-next-debug-string) 
+                        '(nil "\"" (ll-debug-create-next-debug-string)
                               ("Variable: "
                                "  \\" str ":" str)
                               "\\n\"")
