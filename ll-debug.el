@@ -367,7 +367,7 @@ If THING is a list, it is treated as a skeleton (see `skeleton-insert')
 If THING is a function, it is funcalled and `ll-debug-expand' is
 invoked recursively on the returned value."
   (when thing
-    (etypecase thing
+    (cl-etypecase thing
       (string
        (insert thing))
       (list
