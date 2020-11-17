@@ -74,18 +74,20 @@
 ;; Prerequisites:
 ;;
 ;; I made the latest version of ll-debug with the following emacs:
-;; GNU Emacs 21.3.1
+;; GNU Emacs 27.1
 ;; Please let me know if other versions work.
 
 
 ;; Installation:
 ;;
 ;; Get the newest version of ll-debug.el via
+;; https://github.com/black7375/ll-debug
 ;;
+;; Orginal version is
 ;; http://www.cbrunzema.de/software.html#ll-debug
 ;;
 ;; and put it in your load-path. Add the following form to your init
-;; file (~/.emacs or ~/.xemacs/init.el):
+;; file (~/.emacs or ~/.emacs.d/init.el):
 ;;
 ;;  (require 'll-debug)
 ;;
@@ -193,6 +195,10 @@
 
 
 ;; History:
+;; 2020-11-15  alstjr7375
+;;         * Deprecated lib cl to cl-lib
+;;         * Active lexical binding
+;;         * Version 2.0.1
 ;; 2004-12-28  Claus Brunzema
 ;;         * Major rewrite using defstruct.
 ;;         * New ll-debug-insert instead of
@@ -273,6 +279,9 @@
 
 
 ;; ToDo:
+;; (me)
+;; * Other languae support. like JS.
+;; (original)
 ;; * Check if the strange log calculation in ll-debug-insert is really
 ;;   necessary. I want the number of C-u keypresses to dispatch
 ;;   alternatives on the content slot value of a ll-debug-struct, but
