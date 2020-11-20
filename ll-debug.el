@@ -30,20 +30,20 @@
 ;; It features quick insertion of various debug output statements and
 ;; improved functions for commenting and uncommenting chunks of code.
 ;;
-;; I don't use debuggers very much. I know they can be a big help in
+;; I don't use debuggers very much.  I know they can be a big help in
 ;; some situations and I tried some of them, but I find it almost
 ;; always more direct/convenient/enlightening to put a quick 'printf'
 ;; into a critical area to see what is happening than to fire up a big
 ;; clumsy extra program where it takes me ages just to step through to
-;; the interesting point. In order to avoid repeated typing of
+;; the interesting point.  In order to avoid repeated typing of
 ;; 'printf("I AM HERE\n");' and similar stuff, I created
-;; `ll-debug-insert'. It inserts a statement into your
-;; sourcecode that will display a debug message. It generates
+;; `ll-debug-insert'.  It inserts a statement into your
+;; sourcecode that will display a debug message.  It generates
 ;; unique messages on each invocation (the message consists of a big
 ;; fat DEBUG together with a counter and the current filename).
 ;;
 ;; See variable `ll-debug-statement-alist' if you want to know which
-;; modes are currently supported by ll-debug. You can add new modes
+;; modes are currently supported by ll-debug.  You can add new modes
 ;; with `ll-debug-register-mode'.
 ;;
 ;; When I have found the buggy spot, I like to keep a version of the
@@ -53,20 +53,20 @@
 ;; comments out the original version.
 ;;
 ;; I always missed a keystroke that toggles the 'comment state' of a
-;; line (or region) of sourcecode. I need to turn a line or a block of
-;; code on and off quickly. `ll-debug-toggle-comment-region-or-line'
+;; line (or region) of sourcecode.  I need to turn a line or a block of
+;; code on and off quickly.  `ll-debug-toggle-comment-region-or-line'
 ;; does just that.
 ;;
 ;; Finally, if you want to spit out the values of a lot of variables
-;; you can use `ll-debug-insert' with a C-u prefix arg. It calls
+;; you can use `ll-debug-insert' with a C-u prefix arg.  It calls
 ;; mode-specific skeletons that keep asking for variable names (and
-;; sometimes format specifiers) in the minibuffer. If you just press
+;; sometimes format specifiers) in the minibuffer.  If you just press
 ;; return here the skeleton interaction ends and a statement to print
 ;; the names and the values of the variables is inserted in the
 ;; buffer.
 ;;
 ;; If you want to get rid of the debug messages, use
-;; `ll-debug-revert'. It finds and removes the lines with the debug
+;; `ll-debug-revert'.  It finds and removes the lines with the debug
 ;; output statements, asking for confirmation before it removes
 ;; anything.
 
@@ -86,13 +86,13 @@
 ;; Orginal version is
 ;; http://www.cbrunzema.de/software.html#ll-debug
 ;;
-;; and put it in your load-path. Add the following form to your init
+;; and put it in your load-path.  Add the following form to your init
 ;; file (~/.emacs or ~/.emacs.d/init.el):
 ;;
 ;;  (require 'll-debug)
 ;;
 ;; Now you can bind ll-debug commands to keystrokes yourself or just
-;; call `ll-debug-install-suggested-keybindings'. It clobbers C-v,
+;; call `ll-debug-install-suggested-keybindings'.  It clobbers C-v,
 ;; which may not be completely emacs-political-correct, but it happens
 ;; to be the stuff I use daily, it is only a suggestion, blah, if you
 ;; don't like it, don't use it blah blah, do it your own way blah bla
@@ -117,7 +117,7 @@
 ;;
 ;;    printf("DEBUG-2-main.c\n");
 ;;
-;; and so on. The following conversation uses the variable output (the
+;; and so on.  The following conversation uses the variable output (the
 ;; part in '[' and ']' takes place in the minibuffer):
 ;;
 ;; C-u C-v C-d [ foo <RET> s <RET> bar <RET> d <RET> baz <RET> f <RET> <RET> ]
@@ -147,8 +147,8 @@
 ;; The keybindings installed via
 ;; `ll-debug-install-suggested-keybindings' will call an alternative
 ;; versions for variable output if one ore more C-u prefix args are
-;; given. An alternative version is currently available in (c)perl-mode
-;; only. So, in a (c)perl-mode buffer called 'answer.pl' these keys
+;; given.  An alternative version is currently available in (c)perl-mode
+;; only.  So, in a (c)perl-mode buffer called 'answer.pl' these keys
 ;;
 ;; C-u C-u C-v C-d [ @quux <RET> %thud <RET> $grunt <RET> <RET> ]
 ;;
@@ -160,7 +160,7 @@
 ;; Customisation:
 ;;
 ;; You can use a different string for the debug messages by setting the
-;; variable `ll-debug-output-prefix'. If you set it e.g. to "# DEBUG-"
+;; variable `ll-debug-output-prefix'.  If you set it e.g. to "# DEBUG-"
 ;; your debug output won't disturb gnuplot datafiles anymore.
 ;;
 ;; If you don't like c++'s streams, you can request the printf style
@@ -226,7 +226,7 @@
 ;; 2003-01-30  Claus Brunzema
 ;;         * added ll-debug-insert-emacs-lisp-variable-output.
 ;;         * ll-debug-insert-perl-variable-output doesn't insert
-;;           the '$' automatically anymore. That always confused me.
+;;           the '$' automatically anymore.  That always confused me.
 ;;         * various cleanup and documentation changes.
 ;;         * Version 1.2.3
 ;; 2003-01-29  Claus Brunzema
@@ -280,10 +280,10 @@
 
 ;; ToDo:
 ;; (me)
-;; * Other languae support. like JS.
+;; * Other languae support.  like JS.
 ;; (original)
 ;; * Check if the strange log calculation in ll-debug-insert is really
-;;   necessary. I want the number of C-u keypresses to dispatch
+;;   necessary.  I want the number of C-u keypresses to dispatch
 ;;   alternatives on the content slot value of a ll-debug-struct, but
 ;;   every C-u multiplies prefix-numeric-value by 4. Is there a better
 ;;   way to do this?
@@ -353,7 +353,7 @@ See `ll-debug-statement-alist' and `ll-debug-expand', too."
 
 (defun ll-debug-install-suggested-keybindings ()
   "Install suggested keybindings for ll-debug.
-This installs the following keybindings (clobbering C-v):
+This installs the following keybindings (clobbering \\<C-v>):
 
 C-v C-v   ll-debug-toggle-comment-region-or-line
 C-v v     ll-debug-uncomment-region-or-line
@@ -465,11 +465,11 @@ invoked recursively on the returned value."
 (defun ll-debug-register-mode (modes prefix postfix skel1 &rest skels)
   "Register mode info in `ll-debug-statement-alist'.
 MODES can be a single symbol denoting a mode or a list of mode
-symbols. If it is a list, the following info is registered in every
-listed mode. PREFIX is the prefix thing for debug statements, POSTFIX
-is the postfix thing. SKEL1 and all following SKELS are the content
-things. For more information about these, see the documentation of
-`ll-debug-insert'. If an entry for a given mode already exists in
+symbols.  If it is a list, the following info is registered in every
+listed mode.  PREFIX is the prefix thing for debug statements, POSTFIX
+is the postfix thing.  SKEL1 and all following SKELS are the content
+things.  For more information about these, see the documentation of
+`ll-debug-insert'.  If an entry for a given mode already exists in
 `ll-debug-statement-alist', it will be overwritten."
   (unless (listp modes)
     (setq modes (list modes)))
@@ -500,14 +500,13 @@ things. For more information about these, see the documentation of
               "nofile"))))
 
 (defun ll-debug-insert (arg)
-  "Insert a line of debug output at point according to mode.
-Looks up the current mode in `ll-debug-statement-alist'. The prefix
+  "Insert a line of debug output at `ARG' point according to mode.
+Looks up the current mode in `ll-debug-statement-alist'.  The prefix
 thing of the coressponding ll-debug-struct gets inserted by
-`ll-debug-insert'. The number of times C-u was pressed (prefix arg)
+`ll-debug-insert'.  The number of times <C-u> was pressed (prefix arg)
 determines the entry from the content list of the ll-debug-struct that
-gets inserted next. Finally the postfix thing from the ll-debug-struct
-is inserted into the current buffer.
-"
+gets inserted next.  Finally the postfix thing from the ll-debug-struct
+is inserted into the current buffer."
   (interactive "P")
   (when (listp arg)
     (if (null arg)
