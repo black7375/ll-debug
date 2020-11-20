@@ -3,7 +3,8 @@
   low level debug tools!!\\
   You can debug with printing message.
 
-  This code and docs fork from Claus Brunzema <mail@cbrunzema.de> 's [[http://www.cbrunzema.de/software.html#ll-debug][software page]].
+  This code and docs fork from Claus Brunzema <mail@cbrunzema.de> 's [[http://www.cbrunzema.de/software.html#ll-debug][software page]].\\
+  Not only the code but also the *document was forked*, so it might be different from what I thought or direction!!
 
 ** Why?
    ll-debug.el provides commands to support a low level debug style.\\
@@ -277,7 +278,7 @@ print "DEBUG-1-answer.pl ", Data::Dumper->Dump([\@quux, \%thud, $grunt], [qw/*qu
 *** me
 - Other language support. like JS.
 
-*** orinal
+*** original
 - Check if the strange log calculation in ll-debug-insert is really
   necessary. I want the number of C-u keypresses to dispatch
   alternatives on the content slot value of a ll-debug-struct, but
