@@ -314,11 +314,13 @@ See `ll-debug-statement-alist' and `ll-debug-expand', too."
 
 ;;; gnuemacs / xemacs compatibility ---------------------------------------
 (defun ll-debug-region-exists-p ()
+  "Check if region-exists."
   (if (fboundp 'region-exists-p)
       (region-exists-p)                       ;XEmacs
     (and transient-mark-mode mark-active)))   ;GNUEmacs
 
 (defun ll-debug-uncomment-region (beg end)
+  "Uncomment region `BEG' to `END'."
   (if (fboundp 'uncomment-region)
       (uncomment-region beg end)              ;GNUEmacs
     (comment-region beg end -1)))             ;XEmacs
@@ -326,6 +328,7 @@ See `ll-debug-statement-alist' and `ll-debug-expand', too."
 
 ;;; misc. Functions -------------------------------------------------------
 (defun ll-debug-region-or-line-start ()
+  "Region or line start point."
   (save-excursion
     (if (ll-debug-region-exists-p)
         (progn
@@ -336,6 +339,7 @@ See `ll-debug-statement-alist' and `ll-debug-expand', too."
         (point-at-bol)))))
 
 (defun ll-debug-region-or-line-end ()
+  "Region or line end point."
   (save-excursion
     (if (ll-debug-region-exists-p)
         (progn
