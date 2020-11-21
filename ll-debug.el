@@ -2,11 +2,12 @@
 
 ;; Copyright (C) 2002-2005 Claus Brunzema <mail@cbrunzema.de>
 
-;; http://www.cbrunzema.de/software.html#ll-debug
+;; Homepage: http://www.cbrunzema.de/software.html#ll-debug
 
 ;; Version: 2.0.1
+;; License: GPL-2.0 License
 ;; Package-Version: 2.0.1pre0.20201115.133230
-;; $Id: ll-debug.el,v 1.22 2004/12/28 22:23:16 chb Exp $
+;; Package-Requires: ((emacs "24.3"))
 
 ;; This program is free software; you can redistribute it and/or
 ;; modify it under the terms of the GNU General Public License as
@@ -353,7 +354,7 @@ See `ll-debug-statement-alist' and `ll-debug-expand', too."
 
 (defun ll-debug-install-suggested-keybindings ()
   "Install suggested keybindings for ll-debug.
-This installs the following keybindings (clobbering \\<C-v>):
+This installs the following keybindings (clobbering C-v):
 
 C-v C-v   ll-debug-toggle-comment-region-or-line
 C-v v     ll-debug-uncomment-region-or-line
@@ -558,8 +559,7 @@ Uses `query-replace-regexp' internally."
                         '(nil "\"" (ll-debug-create-next-debug-string)
                               ("Variable name: "
                                "  " str ":~S"
-                               '(progn (setq v1 (concat v1 " " str)) nil)
-                               )
+                               '(progn (setq v1 (concat v1 " " str)) nil))
                               "~%\" " v1))
 
 
