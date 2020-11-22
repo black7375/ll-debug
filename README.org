@@ -128,9 +128,11 @@ a second C-v C-d prints
 
     produces the following lines:
 
+#+BEGIN_SRC lisp
     (CL:format t "DEBUG-1-tree.lisp~%")
     (CL:format t "DEBUG-2-tree.lisp~%")
     (CL:format t "DEBUG-3-tree.lisp foo:~S  bar:~S  baz:~S~%" foo bar baz)
+#+END_SRC
 
 
 *** Usage example 3:
