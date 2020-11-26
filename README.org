@@ -1,3 +1,7 @@
+* It is maintained now!!
+
+https://github.com/replrep/ll-debug
+
 * ll-debug
 
   low level debug tools!!\\
